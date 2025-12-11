@@ -14,7 +14,7 @@ To use it yourself:
 
 ## How It Works
 
-TrackWeight utilizes the [Open Multi-Touch Support library](https://github.com/Kyome22/OpenMultitouchSupport) by [Takuto Nakamura](https://github.com/Kyome22) to gain private access to all mouse and trackpad events on macOS. This library provides detailed touch data including pressure readings that are normally inaccessible to standard applications.
+TrackWeight utilizes the [Open Multi-Touch Support library](https://github.com/Kyome22/OpenMultitouchSupport) to gain private access to all mouse and trackpad events on macOS. This library provides detailed touch data including pressure readings that are normally inaccessible to standard applications.
 
 The key insight is that trackpad pressure events are only generated when there's capacitance detected on the trackpad surface - meaning your finger (or another conductive object) must be in contact with the trackpad. When this condition is met, the trackpad's Force Touch sensors provide precise pressure readings that can be calibrated and converted into weight measurements.
 
@@ -38,7 +38,7 @@ It turns out that the data we get from MultitouchSupport is already in grams!
 ## Installation
 
 1. Clone this repository
-2. Open `TrackWeight.xcodeproj` in Xcode
+2. Open in Xcode
 3. Disable App Sandbox in the project settings (required for trackpad access)
 4. Build and run the application
 
@@ -54,18 +54,3 @@ The application is built using:
 - **SwiftUI** for the user interface
 - **Combine** for reactive data flow
 - **Open Multi-Touch Support library** for low-level trackpad access
-
-### Open Multi-Touch Support Library
-
-This project relies heavily on the excellent work by **Takuto Nakamura** ([@Kyome22](https://github.com/Kyome22)) and the [Open Multi-Touch Support library](https://github.com/Kyome22/OpenMultitouchSupport). The library provides:
-
-- Access to global multitouch events on macOS trackpads
-- Detailed touch data including position, pressure, angle, and density
-- Thread-safe async/await support for touch event streams
-- Touch state tracking and comprehensive sensor data
-
-**License**: MIT License - Copyright (c) 2019 TakutoNakamura
-
-## Disclaimer
-
-This application is for experimental and educational purposes. While efforts have been made to ensure accuracy, TrackWeight should not be used for critical measurements or commercial applications where precision is essential. Always verify measurements with a calibrated scale for important use cases.
